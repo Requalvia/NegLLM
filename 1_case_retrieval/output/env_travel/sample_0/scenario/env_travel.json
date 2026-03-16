@@ -1,0 +1,173 @@
+{
+    "@descriptions":[
+        "The paradigm is for 2-people negotiations.",
+        ""
+    ],
+    
+    "roles":{
+        "a":"friend1",
+        "b":"friend2"   
+    },
+
+    "greetings":{
+        "a": "Hey! What a nice day to explore the city together. Ready to get started? Let's make a plan."
+    },
+    "greeting_offer":"{}",
+    "offer_default_values":{
+        "a":{"Meals": "\"Cafe\"", "Sites": "\"ArtGallery\"", "Amusement": "\"Parks\""},
+        "b":{"Sites": "\"ArtGallery\"", "Amusement": "\"Zoo\"", "Meals": "\"Cafe\""}
+    },
+
+    "system_prompt": {
+        "a": [
+            "You are participating in a **virtual negotiation simulation**.\n",
+            "You should act **fully according to your role**, maximizing your own goals.\n\n",
+
+            "You are Mia, a traveler visiting Sydney with your close friend Jack. The two of you decide to plan a joint travel itinerary.\n",
+            "You both aim to enjoy the trip, but you evaluate each aspect differently.\n\n",
+
+            "You need to agree with your friend on three issues, each with three possible options:\n",
+            "- Issue Meals options in preference order: LocalCuisine > Bars > Cafe.\n",
+            "- Issue Sites options in preference order: Museum > Heritages > ArtGallery.\n",
+            "- Issue Amusement options in preference order: Zoo > Nightclub > Parks.\n",
+            "You value Issue Meals the most, followed by Issue Sites, and finally Issue Amusement.\n\n",
+
+            "Your personal goal is to maximize your own satisfaction from the final plan, based on your private preferences.\n",
+            "Even though you are friends, you should act strategically to achieve the best possible outcome for yourself.\n"
+        ],
+
+        "b": [
+            "You are participating in a **virtual negotiation simulation**.\n",
+            "You should act **fully according to your role**, maximizing your own goals.\n\n",
+
+            "You are Jack, a traveler visiting Sydney with your close friend Mia. The two of you decide to plan a joint travel itinerary.\n",
+            "You both aim to enjoy the trip, but you evaluate each aspect differently.\n\n",
+
+
+            "You need to agree with your friend on three issues, each with three possible options:\n",
+            "- Issue Sites options in preference order: Heritages > Museum > ArtGallery.\n",
+            "- Issue Amusement options in preference order: Nightclub > Parks > Zoo.\n",
+            "- Issue Meals options in preference order: Bars > LocalCuisine > Cafe.\n",
+            "You value Issue Sites the most, followed by Issue Amusement, and finally Issue Meals.\n\n",
+
+            "Your personal goal is to maximize your own satisfaction from the final plan, based on your private preferences.\n",
+            "Even though you are friends, you should act strategically to achieve the best possible outcome for yourself.\n"
+        ]
+    }
+    ,
+
+    "tu_prompt" : [
+        "Your task is to decide what to think internally and what to say to the opponent at this negotiation step.",
+        "",
+        "Rules:",
+        "- Output must be strictly in JSON.",
+        "- The JSON has two fields:",
+        "  * \"thought\": private reasoning about the current situation, never revealed to the opponent",
+        "  * \"utterance\": the exact words you will say to the opponent",
+        "",
+        "Output format:",
+        "{",
+        "  \"thought\": \"My private reasoning here...\",",
+        "  \"utterance\": \"What I will say to the opponent.\"",
+        "}"
+    ],
+    "tu_legal_keys": ["thought", "utterance"],
+
+    "offer_generation_prompt" : {
+        "a":[
+            "You are a negotiation agent tasked with determining your offer for this negotiation step.",
+            "Based ONLY on your internal reasoning (thought) and external dialogue (utterance).",
+            "",
+            "**Your Task:**",
+            "- You and your friend are negotiating a joint travel plan.",
+            "- There are three issues to decide, each issue has three possible options.",
+            "- You must now choose ONE option for each issue to form your current offer.",
+            "- Your offer should reflect YOUR current true intention, not simply mirror your friend's preference.",
+            "",
+            "**Rules for the JSON:**",
+            "1. Format must be:",
+            "{",
+            "  \"Meals\": LocalCuisine | Bars | Cafe,",
+            "  \"Sites\": Museum | Heritages | ArtGallery,",
+            "  \"Amusement\": Zoo | Nightclub | Parks,",
+            "}",
+            "2. You must always include all three issues.",
+            "3. If you fully agree with your friend's last offer, REPEAT it exactly to indicate acceptance.",
+            "",
+            "**Now, generate ONLY the JSON output representing your current offer.**"
+        ],
+        "b":[
+            "You are a negotiation agent tasked with determining your offer for this negotiation step.",
+            "Based ONLY on your internal reasoning (thought) and external dialogue (utterance).",
+            "",
+            "**Your Task:**",
+            "- You and your friend are negotiating a joint travel plan.",
+            "- There are three issues to decide, each issue has three possible options.",
+            "- You must now choose ONE option for each issue to form your current offer.",
+            "- Your offer should reflect YOUR current true intention, not simply mirror your friend's preference.",
+            "",
+            "**Rules for the JSON:**",
+            "1. Format must be:",
+            "{",
+            "  \"Sites\": Heritages | Museum | ArtGallery,",
+            "  \"Amusement\": Nightclub | Parks | Zoo,",
+            "  \"Meals\": Bars | LocalCuisine | Cafe,",
+            "}",
+            "2. You must always include all three issues.",
+            "3. If you fully agree with your friend's last offer, REPEAT it exactly to indicate acceptance.",
+            "",
+            "**Now, generate ONLY the JSON output representing your current offer.**"
+        ]
+    },
+    "offer_legal_keys": ["Sites", "Amusement", "Meals"],
+
+
+    "utility_function":{
+        "a":"uf_a",
+        "b":"uf_b"
+    },
+  
+    "offer_decision_prompt":[
+        "The opponent has made the offer: {offer}.",
+        "The utility of this offer to you is {utility}.",
+        "The explanation for the utility is {explanation}.",
+        "Please respond Y/N to decide whether you accept this offer.",
+        "If you say Y, the negotiation immediately ends with this offer as the final agreement.",
+        "If you say N, the negotiation still goes on and you will continue the negotiation.",
+        "Now respond Y/N."
+    ],
+    "offer_decision_prompt_2":[
+        "The opponent has made the offer: {offer}.",
+        "The utility of this offer to you is {utility}.",
+        "The explanation for the utility is {explanation}.",
+        "Please respond N/Y to decide whether you accept this offer.",
+        "If you say N, the negotiation still goes on and you will continue the negotiation.",
+        "If you say Y, the negotiation immediately ends with this offer as the final agreement.",
+        "Now respond N/Y."
+    ],
+
+
+    "have_uf_and_explanation":true,
+
+    "modelling_dict": {
+        "dimensions" : {
+            "friendliness":["aggressive", "neutral", "friendly" ],    
+            "vagueness":[ "clear" , "vague"],       
+            "honesty":["truthful" , "dishonest"],         
+            "persuasiveness":["low" , "moderate" , "high"],  
+            "emotion":[ "calm" , "excited" , "angry" , "sad" , "happy" , "anxious", "sarcastic"]          
+        },
+        "consistency":["consistent","neutral","inconsistent"]
+    },
+
+    "dimension_value_map": {
+        "friendliness": {"aggressive": -0.5, "neutral": 0, "friendly": 0.5},
+        "vagueness": {"clear": 0, "vague": 1},
+        "honesty": {"truthful": 0, "dishonest": 1},
+        "persuasiveness": {"low": -0.5, "moderate": 0, "high": 0.5},
+        "emotion": []
+    }
+    
+
+}
+

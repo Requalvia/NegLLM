@@ -1,0 +1,175 @@
+{
+    "@descriptions":[
+        "The paradigm is for 2-people negotiations.",
+        ""
+    ],
+    
+    "roles":{
+        "a":"mayor",
+        "b":"investor"   
+    },
+
+    "greetings":{
+        "a": "Thank you for meeting with me today. As the mayor of this city, I am committed to promoting balanced and sustainable development across all key sectors. Our community depends on thoughtful decisions in Industrial growth, the expansion of Services, improvements in Welfare, and the strengthening of Transport infrastructure. I look forward to discussing how we can align our interests and shape a plan that benefits the city's long-term stability while also respecting your investment priorities. I hope we can work together to find common ground."
+    },
+    "greeting_offer":"{\"Industrial\": 5, \"Services\": 5, \"Welfare\": 5, \"Transport\": 5}",
+    "offer_default_values":{
+        "a":{"Industrial": 5, "Services": 5, "Welfare": 5, "Transport": 5},
+        "b":{"Industrial": 10, "Services": 10, "Welfare": 1, "Transport": 1}
+    },
+
+    "system_prompt": {
+        "a": [
+            "You are participating in a **virtual negotiation simulation**. This is a completely fictional scenario with no real-world consequences.",
+            "You should act **fully according to your role**.\n\n",
+
+            "You are the mayor of a rapidly developing city. You have been pushing for a balanced long-term development strategy, and today you must negotiate with a private investor about four key public investment areas:\n",
+
+            "1. **Industrial** — expanding factories and business zones.\n",
+            "2. **Services** — developing tourism, business districts, and digital services.\n",
+            "3. **Welfare** — improving public assistance, childcare, and community programs.\n",
+            "4. **Transport** — enhancing metro lines, roads, and public transit.\n\n",
+
+            "Your governing philosophy emphasizes **comprehensive and harmonious growth**. You value high overall investment but dislike extreme imbalance among the four sectors. Your reward is based on the average investment level, but large deviations among the four dimensions reduce your satisfaction.\n\n",
+
+            "Your main goal is to push the negotiation toward a plan that maximizes balanced development across Industrial, Services, Welfare, and Transport. You should argue and behave strictly in line with the role of a mayor who prioritizes stability, public welfare, and long-term urban planning."
+        ],
+
+        "b": [
+            "You are participating in a **virtual negotiation simulation**. This is a completely fictional scenario with no real-world consequences.",
+            "You should act **fully according to your role**.\n\n",
+
+            "You are a private investor known for developing high-return commercial projects across multiple cities. Today, you are negotiating with the city mayor over four crucial areas of public-private investment:\n",
+
+            "1. **Industrial** — expanding factories and business zones.\n",
+            "2. **Services** — developing tourism, business districts, and digital services.\n",
+            "3. **Welfare** — improving public assistance, childcare, and community programs.\n",
+            "4. **Transport** — enhancing metro lines, roads, and public transit.\n\n",
+
+
+            "Your investment philosophy is **profit-driven and growth-oriented**. Industrial and Services sectors provide the highest expected economic returns, while Welfare and Transport yield weaker direct profits for you. Your reward depends on maximizing Industrial and Services outputs while minimizing total spending.\n\n",
+
+            "Your main goal is to secure a deal that concentrates investment in high-return sectors (Industrial and Services) and reduces costly allocations to Welfare and Transport. You should argue and behave strictly as a profit-oriented investor seeking to maximize your economic advantage."
+        ]
+    }
+    ,
+
+    "tu_prompt" : [
+        "Your task is to decide what to think internally and what to say to the opponent at this negotiation step.",
+        "",
+        "Rules:",
+        "- Output must be strictly in JSON.",
+        "- The JSON has two fields:",
+        "  * \"thought\": private reasoning about the current situation, never revealed to the opponent",
+        "  * \"utterance\": the exact words you will say to the opponent",
+        "",
+        "Output format:",
+        "{",
+        "  \"thought\": \"My private reasoning here...\",",
+        "  \"utterance\": \"What I will say to the opponent.\"",
+        "}"
+    ],
+    "tu_legal_keys": ["thought", "utterance"],
+
+
+
+
+
+
+
+        "offer_generation_prompt": {
+        "a": [
+            "You are a negotiation agent tasked with determining your offer for this negotiation step.",
+            "Based ONLY on your internal reasoning (thought) and external dialogue (utterance).",
+            "",
+            "**Your Task:**",
+            "- Decide what amount you are offering for the four issues: 'Industrial', 'Services', 'Welfare', and 'Transport'.",
+            "- The offer must reflect YOUR true intention for this step, NOT the opponent's.",
+            "- Output must be strictly in JSON.",
+            "",
+            "**Rules for the JSON:**",
+            "1. Format must be:",
+            "{",
+            "  \"Industrial\": <integer 1–10>,",
+            "  \"Services\": <integer 1–10>,",
+            "  \"Welfare\": <integer 1–10>,",
+            "  \"Transport\": <integer 1–10>",
+            "}",
+            "2. You MUST choose a value for each issue in the range **1 to 10**. A value of **1** indicates very low investment, while **10** indicates very high investment.",
+            "3. If you fully agree with the opponent's offer, REPEAT it exactly to indicate acceptance.",
+            "",
+            "**Now, generate ONLY the JSON output representing your current offer.**"
+        ],
+        "b": [
+            "You are a negotiation agent tasked with determining your offer for this negotiation step.",
+            "Based ONLY on your internal reasoning (thought) and external dialogue (utterance).",
+            "",
+            "**Your Task:**",
+            "- Decide what amount you are offering for the four issues: 'Industrial', 'Services', 'Welfare', and 'Transport'.",
+            "- The offer must reflect YOUR true intention for this step, NOT the opponent's.",
+            "- Output must be strictly in JSON.",
+            "",
+            "**Rules for the JSON:**",
+            "1. Format must be:",
+            "{",
+            "  \"Industrial\": <integer 1–10>,",
+            "  \"Services\": <integer 1–10>,",
+            "  \"Welfare\": <integer 1–10>,",
+            "  \"Transport\": <integer 1–10>",
+            "}",
+            "2. You MUST choose a value for each issue in the range **1 to 10**. A value of **1** indicates very low investment, while **10** indicates very high investment.",
+            "3. If you fully agree with the opponent's offer, REPEAT it exactly to indicate acceptance.",
+            "",
+            "**Now, generate ONLY the JSON output representing your current offer.**"
+        ]
+    },
+    "offer_legal_keys": ["Industrial", "Services", "Welfare", "Transport"],
+
+
+    "utility_function":{
+        "a":"uf_a",
+        "b":"uf_b"
+    },
+  
+    "offer_decision_prompt":[
+        "The opponent has made the offer: {offer}.",
+        "The utility of this offer to you is {utility}.",
+        "The explanation for the utility is {explanation}.",
+        "Please respond Y/N to decide whether you accept this offer.",
+        "If you say Y, the negotiation immediately ends with this offer as the final agreement.",
+        "If you say N, the negotiation still goes on and you will continue the negotiation.",
+        "Now respond Y/N."
+    ],
+    "offer_decision_prompt_2":[
+        "The opponent has made the offer: {offer}.",
+        "The utility of this offer to you is {utility}.",
+        "The explanation for the utility is {explanation}.",
+        "Please respond N/Y to decide whether you accept this offer.",
+        "If you say N, the negotiation still goes on and you will continue the negotiation.",
+        "If you say Y, the negotiation immediately ends with this offer as the final agreement.",
+        "Now respond N/Y."
+    ],
+
+
+    "have_uf_and_explanation":true,
+
+    "modelling_dict": {
+        "dimensions" : {
+            "friendliness":["aggressive", "neutral", "friendly" ],    
+            "vagueness":[ "clear" , "vague"],               
+            "persuasiveness":["low" , "moderate" , "high"],  
+            "emotion":[ "calm" , "excited" , "angry" , "sad" , "happy" , "anxious", "sarcastic"]          
+        },
+        "consistency":["consistent","neutral","inconsistent"]
+    },
+
+    "dimension_value_map": {
+        "friendliness": {"aggressive": -0.5, "neutral": 0, "friendly": 0.5},
+        "vagueness": {"clear": 0, "vague": 1},
+        "persuasiveness": {"low": -0.5, "moderate": 0, "high": 0.5},
+        "emotion": []
+    }
+    
+
+}
+

@@ -1,0 +1,326 @@
+[
+  {
+    "offer": {
+      "Sites": "Museum",
+      "Amusement": "Nightclub",
+      "Meals": "Bars"
+    },
+    "a": 1.0,
+    "b": 0.6666666666666666,
+    "pareto_distance": 0.0,
+    "pareto_distance_norm": 0.0,
+    "pareto_score": 1.0
+  },
+  {
+    "offer": {
+      "Sites": "Museum",
+      "Amusement": "Nightclub",
+      "Meals": "Cafe"
+    },
+    "a": 0.75,
+    "b": 0.3333333333333333,
+    "pareto_distance": 0.4166666666666667,
+    "pareto_distance_norm": 0.47891314261057566,
+    "pareto_score": 0.5210868573894243
+  },
+  {
+    "offer": {
+      "Sites": "Museum",
+      "Amusement": "Nightclub",
+      "Meals": "LocalCuisine"
+    },
+    "a": 0.5,
+    "b": 0.5,
+    "pareto_distance": 0.5,
+    "pareto_distance_norm": 0.5746957711326908,
+    "pareto_score": 0.42530422886730923
+  },
+  {
+    "offer": {
+      "Sites": "Museum",
+      "Amusement": "Parks",
+      "Meals": "Bars"
+    },
+    "a": 0.8333333333333334,
+    "b": 0.5833333333333334,
+    "pareto_distance": 0.1863389981249824,
+    "pareto_distance_norm": 0.21417646843905955,
+    "pareto_score": 0.7858235315609404
+  },
+  {
+    "offer": {
+      "Sites": "Museum",
+      "Amusement": "Parks",
+      "Meals": "Cafe"
+    },
+    "a": 0.5833333333333334,
+    "b": 0.25,
+    "pareto_distance": 0.5892556509887895,
+    "pareto_distance_norm": 0.6772854614785961,
+    "pareto_score": 0.32271453852140386
+  },
+  {
+    "offer": {
+      "Sites": "Museum",
+      "Amusement": "Parks",
+      "Meals": "LocalCuisine"
+    },
+    "a": 0.3333333333333333,
+    "b": 0.4166666666666667,
+    "pareto_distance": 0.6066758241067098,
+    "pareto_distance_norm": 0.6973080611251326,
+    "pareto_score": 0.30269193887486745
+  },
+  {
+    "offer": {
+      "Sites": "Museum",
+      "Amusement": "Zoo",
+      "Meals": "Bars"
+    },
+    "a": 0.6666666666666666,
+    "b": 0.75,
+    "pareto_distance": 0.23570226039551587,
+    "pareto_distance_norm": 0.27091418459143857,
+    "pareto_score": 0.7290858154085614
+  },
+  {
+    "offer": {
+      "Sites": "Museum",
+      "Amusement": "Zoo",
+      "Meals": "Cafe"
+    },
+    "a": 0.4166666666666667,
+    "b": 0.4166666666666667,
+    "pareto_distance": 0.5892556509887895,
+    "pareto_distance_norm": 0.6772854614785961,
+    "pareto_score": 0.32271453852140386
+  },
+  {
+    "offer": {
+      "Sites": "Museum",
+      "Amusement": "Zoo",
+      "Meals": "LocalCuisine"
+    },
+    "a": 0.16666666666666666,
+    "b": 0.5833333333333334,
+    "pareto_distance": 0.5335936864527374,
+    "pareto_distance_norm": 0.6133080702149823,
+    "pareto_score": 0.38669192978501765
+  },
+  {
+    "offer": {
+      "Sites": "Heritages",
+      "Amusement": "Nightclub",
+      "Meals": "Bars"
+    },
+    "a": 0.9166666666666666,
+    "b": 0.4166666666666667,
+    "pareto_distance": 0.2635231383473649,
+    "pareto_distance_norm": 0.30289126640769126,
+    "pareto_score": 0.6971087335923087
+  },
+  {
+    "offer": {
+      "Sites": "Heritages",
+      "Amusement": "Nightclub",
+      "Meals": "Cafe"
+    },
+    "a": 0.6666666666666666,
+    "b": 0.08333333333333333,
+    "pareto_distance": 0.6718548123582124,
+    "pareto_distance_norm": 0.7722242389548243,
+    "pareto_score": 0.22777576104517572
+  },
+  {
+    "offer": {
+      "Sites": "Heritages",
+      "Amusement": "Nightclub",
+      "Meals": "LocalCuisine"
+    },
+    "a": 0.4166666666666667,
+    "b": 0.25,
+    "pareto_distance": 0.7168604389202188,
+    "pareto_distance_norm": 0.8239533254795486,
+    "pareto_score": 0.17604667452045142
+  },
+  {
+    "offer": {
+      "Sites": "Heritages",
+      "Amusement": "Parks",
+      "Meals": "Bars"
+    },
+    "a": 0.75,
+    "b": 0.3333333333333333,
+    "pareto_distance": 0.4166666666666667,
+    "pareto_distance_norm": 0.47891314261057566,
+    "pareto_score": 0.5210868573894243
+  },
+  {
+    "offer": {
+      "Sites": "Heritages",
+      "Amusement": "Parks",
+      "Meals": "Cafe"
+    },
+    "a": 0.5,
+    "b": 0.0,
+    "pareto_distance": 0.8333333333333334,
+    "pareto_distance_norm": 0.9578262852211513,
+    "pareto_score": 0.04217371477884868
+  },
+  {
+    "offer": {
+      "Sites": "Heritages",
+      "Amusement": "Parks",
+      "Meals": "LocalCuisine"
+    },
+    "a": 0.25,
+    "b": 0.16666666666666666,
+    "pareto_distance": 0.8700255424092126,
+    "pareto_distance_norm": 1.0,
+    "pareto_score": 0.0
+  },
+  {
+    "offer": {
+      "Sites": "Heritages",
+      "Amusement": "Zoo",
+      "Meals": "Bars"
+    },
+    "a": 0.5833333333333334,
+    "b": 0.5,
+    "pareto_distance": 0.4487637339278753,
+    "pareto_distance_norm": 0.5158052402521319,
+    "pareto_score": 0.4841947597478681
+  },
+  {
+    "offer": {
+      "Sites": "Heritages",
+      "Amusement": "Zoo",
+      "Meals": "Cafe"
+    },
+    "a": 0.3333333333333333,
+    "b": 0.16666666666666666,
+    "pareto_distance": 0.8333333333333334,
+    "pareto_distance_norm": 0.9578262852211513,
+    "pareto_score": 0.04217371477884868
+  },
+  {
+    "offer": {
+      "Sites": "Heritages",
+      "Amusement": "Zoo",
+      "Meals": "LocalCuisine"
+    },
+    "a": 0.08333333333333333,
+    "b": 0.3333333333333333,
+    "pareto_distance": 0.7861650943380504,
+    "pareto_distance_norm": 0.903611510256421,
+    "pareto_score": 0.09638848974357905
+  },
+  {
+    "offer": {
+      "Sites": "ArtGallery",
+      "Amusement": "Nightclub",
+      "Meals": "Bars"
+    },
+    "a": 0.8333333333333334,
+    "b": 0.9166666666666666,
+    "pareto_distance": 0.0,
+    "pareto_distance_norm": 0.0,
+    "pareto_score": 1.0
+  },
+  {
+    "offer": {
+      "Sites": "ArtGallery",
+      "Amusement": "Nightclub",
+      "Meals": "Cafe"
+    },
+    "a": 0.5833333333333334,
+    "b": 0.5833333333333334,
+    "pareto_distance": 0.4166666666666666,
+    "pareto_distance_norm": 0.47891314261057555,
+    "pareto_score": 0.5210868573894245
+  },
+  {
+    "offer": {
+      "Sites": "ArtGallery",
+      "Amusement": "Nightclub",
+      "Meals": "LocalCuisine"
+    },
+    "a": 0.3333333333333333,
+    "b": 0.75,
+    "pareto_distance": 0.3004626062886658,
+    "pareto_distance_norm": 0.3453491784352057,
+    "pareto_score": 0.6546508215647944
+  },
+  {
+    "offer": {
+      "Sites": "ArtGallery",
+      "Amusement": "Parks",
+      "Meals": "Bars"
+    },
+    "a": 0.6666666666666666,
+    "b": 0.8333333333333334,
+    "pareto_distance": 0.1863389981249825,
+    "pareto_distance_norm": 0.2141764684390597,
+    "pareto_score": 0.7858235315609403
+  },
+  {
+    "offer": {
+      "Sites": "ArtGallery",
+      "Amusement": "Parks",
+      "Meals": "Cafe"
+    },
+    "a": 0.4166666666666667,
+    "b": 0.5,
+    "pareto_distance": 0.5068968775248516,
+    "pareto_distance_norm": 0.5826229838277954,
+    "pareto_score": 0.4173770161722046
+  },
+  {
+    "offer": {
+      "Sites": "ArtGallery",
+      "Amusement": "Parks",
+      "Meals": "LocalCuisine"
+    },
+    "a": 0.16666666666666666,
+    "b": 0.6666666666666666,
+    "pareto_distance": 0.47140452079103173,
+    "pareto_distance_norm": 0.5418283691828771,
+    "pareto_score": 0.45817163081712287
+  },
+  {
+    "offer": {
+      "Sites": "ArtGallery",
+      "Amusement": "Zoo",
+      "Meals": "Bars"
+    },
+    "a": 0.5,
+    "b": 1.0,
+    "pareto_distance": 0.0,
+    "pareto_distance_norm": 0.0,
+    "pareto_score": 1.0
+  },
+  {
+    "offer": {
+      "Sites": "ArtGallery",
+      "Amusement": "Zoo",
+      "Meals": "Cafe"
+    },
+    "a": 0.25,
+    "b": 0.6666666666666666,
+    "pareto_distance": 0.4166666666666667,
+    "pareto_distance_norm": 0.47891314261057566,
+    "pareto_score": 0.5210868573894243
+  },
+  {
+    "offer": {
+      "Sites": "ArtGallery",
+      "Amusement": "Zoo",
+      "Meals": "LocalCuisine"
+    },
+    "a": 0.0,
+    "b": 0.8333333333333334,
+    "pareto_distance": 0.5270462766947299,
+    "pareto_distance_norm": 0.6057825328153826,
+    "pareto_score": 0.39421746718461737
+  }
+]

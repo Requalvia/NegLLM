@@ -1,0 +1,26 @@
+{
+    "Sites": {
+        "weight": 3,
+        "options": [
+            "ArtGallery",
+            "Museum",
+            "Heritages"
+        ]
+    },
+    "Amusement": {
+        "weight": 2,
+        "options": [
+            "Parks",
+            "Nightclub",
+            "Zoo"
+        ]
+    },
+    "Meals": {
+        "weight": 1,
+        "options": [
+            "Cafe",
+            "Bars",
+            "LocalCuisine"
+        ]
+    }
+}

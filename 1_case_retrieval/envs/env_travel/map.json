@@ -1,0 +1,51 @@
+{
+    "@description":"initial",
+    "ĻNAME_AĻ":{
+        "default":"Alice",
+        "alternative":[
+            "Alice",
+            "Alex",
+            "Emma",
+            "Sophie",
+            "Liam",
+            "Mia",
+            "Lucas",
+            "Olivia"
+        ]
+    },
+    "ĻNAME_BĻ":{
+        "default":"Bob",
+        "alternative":[
+            "Bob",
+            "Blake",
+            "Noah",
+            "Ethan",
+            "Ava",
+            "Chloe",
+            "Jack",
+            "Ella"
+        ]
+    },
+    "ĻTRAVEL_DSTĻ": {
+        "default": "Amsterdam",
+        "alternative": [
+            "Amsterdam",
+            "Paris",
+            "Barcelona",
+            "Rome",
+            "Berlin",
+            "Prague",
+            "Vienna",
+            "Lisbon",
+            "Copenhagen",
+            "Tokyo",
+            "Seoul",
+            "Bangkok",
+            "New York",
+            "London",
+            "Sydney",
+            "Dubai"
+        ]
+    },
+    "@":""
+}
